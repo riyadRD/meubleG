@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 42 33% 98%; /* #FDFCF7 - Warm Ivory */
+    --foreground: 60 5% 15%; /* #282826 - Deep Charcoal */
+    --card: 34 50% 94%; /* #FAF0E6 - Logo Beige */
+    --card-foreground: 60 5% 15%;
+    --popover: 34 50% 94%;
+    --popover-foreground: 60 5% 15%;
+    --primary: 60 5% 15%; /* Deep Charcoal */
+    --primary-foreground: 42 33% 98%;
+    --secondary: 34 26% 76%; /* #D2C4B1 - Sand */
+    --secondary-foreground: 60 5% 15%;
+    --brand-logo: 34 50% 94%; /* #FAF0E6 */
+    --brand-dark: 60 5% 15%; /* Deep Charcoal */
+    --muted: 35 33% 90%; /* #F0EAE1 - Soft Beige */
+    --muted-foreground: 34 10% 45%;
+    --accent: 35 33% 90%;
+    --accent-foreground: 60 5% 15%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 42 33% 98%;
+    --border: 35 33% 90%;
+    --input: 35 33% 90%;
+    --ring: 60 5% 15%;
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-serif antialiased overflow-x-hidden;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif text-foreground font-medium;
+  }
+}
+
+.glassmorphism {
+  @apply bg-background/80 backdrop-blur-xl border border-white/50 shadow-[0_8px_30px_rgb(0,0,0,0.04)];
+}
+
+[dir="rtl"] {
+  font-family: 'Amiri', serif;
+}
+
+[dir="rtl"] h1, [dir="rtl"] h2, [dir="rtl"] h3, [dir="rtl"] h4, [dir="rtl"] h5, [dir="rtl"] h6 {
+  font-family: 'Amiri', serif;
+}
