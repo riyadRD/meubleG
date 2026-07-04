@@ -6,7 +6,7 @@ export type Json =
   | { [key: string]: Json | undefined }
   | Json[]
 
-export interface Database {
+export type Database = {
   public: {
     Tables: {
       categories: {
@@ -28,6 +28,7 @@ export interface Database {
           slug?: string
           created_at?: string
         }
+        Relationships: []
       }
       products: {
         Row: {
@@ -66,6 +67,15 @@ export interface Database {
           is_new?: boolean
           created_at?: string
         }
+        Relationships: [
+          {
+            foreignKeyName: "products_category_id_fkey"
+            columns: ["category_id"]
+            isOneToOne: false
+            referencedRelation: "categories"
+            referencedColumns: ["id"]
+          }
+        ]
       }
       orders: {
         Row: {
@@ -104,6 +114,7 @@ export interface Database {
           status?: 'pending' | 'confirmed' | 'delivered' | 'cancelled'
           created_at?: string
         }
+        Relationships: []
       }
       contact_messages: {
         Row: {
@@ -136,6 +147,7 @@ export interface Database {
           is_read?: boolean
           created_at?: string
         }
+        Relationships: []
       }
       settings: {
         Row: {
@@ -165,16 +177,20 @@ export interface Database {
           showroom_address?: string | null
           updated_at?: string
         }
+        Relationships: []
       }
     }
     Views: {
-      [_ in never]: never
+      [key: string]: never
     }
     Functions: {
-      [_ in never]: never
+      [key: string]: never
     }
     Enums: {
-      [_ in never]: never
+      [key: string]: never
+    }
+    CompositeTypes: {
+      [key: string]: never
     }
   }
 }

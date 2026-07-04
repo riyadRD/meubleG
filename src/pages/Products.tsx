@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next'
 import { Filter, ChevronDown, Check } from 'lucide-react'
 import { api } from '@/services/api'
 import { Product } from '@/types'
-import { PremiumButton } from '@/components/ui/PremiumButton'
+
 import { EmptyState } from '@/components/ui/EmptyState'
 
 type SortOption = 'newest' | 'popular' | 'price-asc' | 'price-desc'

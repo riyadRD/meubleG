@@ -1,25 +1,24 @@
 import { useState, useEffect } from 'react'
 import { createPortal } from 'react-dom'
 import { motion, AnimatePresence } from 'framer-motion'
-import { X, ChevronLeft, ChevronRight, Truck, ShieldCheck, Check, MessageCircle } from 'lucide-react'
+import { X, ChevronLeft, ChevronRight, Truck, ShieldCheck, Check } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { api } from '@/services/api'
 import { Product } from '@/types'
-import { useNavigate } from 'react-router-dom'
+
 
 export const ProductModal = () => {
   const { t, i18n } = useTranslation()
   const [isOpen, setIsOpen] = useState(false)
   const [product, setProduct] = useState<Product | null>(null)
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
-  const [loading, setLoading] = useState(false)
-  const navigate = useNavigate()
+
 
   useEffect(() => {
     const handleOpen = async (e: Event) => {
       const customEvent = e as CustomEvent<string>
       setIsOpen(true)
-      setLoading(true)
+
       document.body.style.overflow = 'hidden'
       
       const found = await api.products.getById(customEvent.detail)
@@ -27,7 +26,7 @@ export const ProductModal = () => {
         setProduct(found)
         setCurrentImageIndex(0)
       }
-      setLoading(false)
+
     }
 
     window.addEventListener('open-product-modal', handleOpen)
@@ -50,7 +49,6 @@ export const ProductModal = () => {
     maximumFractionDigits: 0
   }).format(product.price)
 
-  const whatsappMessage = encodeURIComponent(`Bonjour, je suis intéressé(e) par le produit: ${product.title} (${product.id}). Est-il disponible ?`)
 
   return createPortal(
     <AnimatePresence>

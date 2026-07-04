@@ -1,10 +1,11 @@
-import { useRef, useState, useEffect } from 'react'
-import { motion, useMotionValue, useSpring } from 'framer-motion'
+import { useRef, useState } from 'react'
+import { HTMLMotionProps, motion, useMotionValue, useSpring } from 'framer-motion'
 import { cn } from '@/lib/utils'
 
-interface PremiumButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+interface PremiumButtonProps extends HTMLMotionProps<'button'> {
   variant?: 'primary' | 'secondary' | 'outline' | 'ghost' | 'whatsapp'
   icon?: React.ReactNode
+  children?: React.ReactNode
 }
 
 export const PremiumButton = ({ 

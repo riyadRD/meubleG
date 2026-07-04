@@ -13,7 +13,7 @@ interface Order {
   address: string
   product_name: string
   quantity: number
-  message: string
+  message: string | null
   status: OrderStatus
   created_at: string
 }

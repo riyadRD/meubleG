@@ -8,9 +8,9 @@ export interface Product {
   price: number;
   category: ProductCategory;
   images: string[];
-  isNew: boolean;
-  isPopular: boolean;
-  inStock: boolean;
+  is_new: boolean;
+  is_popular: boolean;
+  in_stock: boolean;
 }
 
 export interface OrderRequest {

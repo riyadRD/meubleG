@@ -1,4 +1,4 @@
-import { Product, OrderRequest, CustomerLead } from '@/types';
+import { Product, OrderRequest, ProductCategory } from '@/types';
 import { supabase } from '@/lib/supabase';
 
 export const api = {
@@ -19,7 +19,9 @@ export const api = {
       
       return data.map(p => ({
         ...p,
-        category: p.categories?.name || 'Sans catégorie'
+        description: p.description || '',
+        features: [],
+        category: (p.categories as { name: string } | null)?.name as ProductCategory || 'salons'
       })) as Product[];
     },
     getById: async (id: string): Promise<Product | undefined> => {
@@ -33,7 +35,9 @@ export const api = {
       
       return {
         ...data,
-        category: data.categories?.name || 'Sans catégorie'
+        description: data.description || '',
+        features: [],
+        category: (data.categories as { name: string } | null)?.name as ProductCategory || 'salons'
       } as Product;
     },
     getByCategory: async (categoryName: string): Promise<Product[]> => {
@@ -50,7 +54,9 @@ export const api = {
       
       return data.map(p => ({
         ...p,
-        category: p.categories?.name || 'Sans catégorie'
+        description: p.description || '',
+        features: [],
+        category: (p.categories as { name: string } | null)?.name as ProductCategory || 'salons'
       })) as Product[];
     }
   },

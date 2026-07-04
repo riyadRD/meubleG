@@ -12,9 +12,9 @@ interface Category {
 interface Product {
   id: string
   title: string
-  description: string
+  description: string | null
   price: number
-  category_id: string
+  category_id: string | null
   images: string[]
   in_stock: boolean
   is_popular: boolean

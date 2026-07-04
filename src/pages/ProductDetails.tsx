@@ -3,7 +3,7 @@ import { useParams, useNavigate, useLocation } from 'react-router-dom'
 import { ChevronLeft, Truck, ShieldCheck, Check, Info } from 'lucide-react'
 import { api } from '@/services/api'
 import { Product } from '@/types'
-import { PremiumButton } from '@/components/ui/PremiumButton'
+
 import { useTranslation } from 'react-i18next'
 
 // Lightweight skeleton block — renders immediately, no spinners, no blocking

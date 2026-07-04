@@ -1,4 +1,4 @@
-import { Product, ProductCategory } from '@/types';
+import { Product } from '@/types';
 
 export const mockProducts: Product[] = [
   {
@@ -17,9 +17,9 @@ export const mockProducts: Product[] = [
       'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?q=80&w=800&auto=format&fit=crop',
       'https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?q=80&w=800&auto=format&fit=crop',
     ],
-    isNew: true,
-    isPopular: true,
-    inStock: true,
+    is_new: true,
+    is_popular: true,
+    in_stock: true,
   },
   {
     id: 'p-2',
@@ -37,9 +37,9 @@ export const mockProducts: Product[] = [
       'https://images.unsplash.com/photo-1505693314120-0d443867891c?q=80&w=800&auto=format&fit=crop',
       'https://images.unsplash.com/photo-1540518614846-7eded433c457?q=80&w=800&auto=format&fit=crop',
     ],
-    isNew: false,
-    isPopular: true,
-    inStock: true,
+    is_new: false,
+    is_popular: true,
+    in_stock: true,
   },
   {
     id: 'p-3',
@@ -57,9 +57,9 @@ export const mockProducts: Product[] = [
       'https://images.unsplash.com/photo-1577140917170-285929fb55b7?q=80&w=800&auto=format&fit=crop',
       'https://images.unsplash.com/photo-1533090161767-e6ffed986c88?q=80&w=800&auto=format&fit=crop',
     ],
-    isNew: true,
-    isPopular: false,
-    inStock: true,
+    is_new: true,
+    is_popular: false,
+    in_stock: true,
   },
   {
     id: 'p-4',
@@ -76,9 +76,9 @@ export const mockProducts: Product[] = [
     images: [
       'https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?q=80&w=800&auto=format&fit=crop',
     ],
-    isNew: false,
-    isPopular: true,
-    inStock: false,
+    is_new: false,
+    is_popular: true,
+    in_stock: false,
   },
   {
     id: 'p-5',
@@ -95,9 +95,9 @@ export const mockProducts: Product[] = [
     images: [
       'https://images.unsplash.com/photo-1600607686527-6fb886090705?q=80&w=800&auto=format&fit=crop',
     ],
-    isNew: true,
-    isPopular: false,
-    inStock: true,
+    is_new: true,
+    is_popular: false,
+    in_stock: true,
   },
   {
     id: 'p-6',
@@ -114,8 +114,8 @@ export const mockProducts: Product[] = [
     images: [
       'https://images.unsplash.com/photo-1532372576444-dda954194ad0?q=80&w=800&auto=format&fit=crop',
     ],
-    isNew: false,
-    isPopular: true,
-    inStock: true,
+    is_new: false,
+    is_popular: true,
+    in_stock: true,
   }
 ];

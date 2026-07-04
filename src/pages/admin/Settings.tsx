@@ -6,11 +6,11 @@ import { playNotificationSound } from '@/hooks/useAdminRealtime'
 
 interface SiteSettings {
   id: string
-  whatsapp: string
-  phone: string
-  instagram: string
-  tiktok: string
-  showroom_address: string
+  whatsapp: string | null
+  phone: string | null
+  instagram: string | null
+  tiktok: string | null
+  showroom_address: string | null
 }
 
 const SOUND_KEY = 'gz_admin_sound_enabled'
@@ -109,7 +109,7 @@ export default function AdminSettings() {
             <input
               type="text"
               dir="ltr"
-              value={settings.whatsapp}
+              value={settings.whatsapp || ''}
               onChange={(e) => handleChange('whatsapp', e.target.value)}
               className="w-full px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all text-sm"
             />
@@ -121,7 +121,7 @@ export default function AdminSettings() {
             <input
               type="text"
               dir="ltr"
-              value={settings.phone}
+              value={settings.phone || ''}
               onChange={(e) => handleChange('phone', e.target.value)}
               className="w-full px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all text-sm"
             />
@@ -143,7 +143,7 @@ export default function AdminSettings() {
               <span className="px-3.5 py-2.5 bg-gray-100 border border-r-0 border-gray-200 rounded-l-xl text-gray-500 text-sm">@</span>
               <input
                 type="text"
-                value={settings.instagram}
+                value={settings.instagram || ''}
                 onChange={(e) => handleChange('instagram', e.target.value)}
                 className="w-full px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-r-xl focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all text-sm"
               />
@@ -157,7 +157,7 @@ export default function AdminSettings() {
               <span className="px-3.5 py-2.5 bg-gray-100 border border-r-0 border-gray-200 rounded-l-xl text-gray-500 text-sm">@</span>
               <input
                 type="text"
-                value={settings.tiktok.replace('@', '')}
+                value={(settings.tiktok || '').replace('@', '')}
                 onChange={(e) => handleChange('tiktok', '@' + e.target.value)}
                 className="w-full px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-r-xl focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all text-sm"
               />
@@ -177,7 +177,7 @@ export default function AdminSettings() {
           </label>
           <textarea
             rows={3}
-            value={settings.showroom_address}
+            value={settings.showroom_address || ''}
             onChange={(e) => handleChange('showroom_address', e.target.value)}
             className="w-full px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all text-sm resize-none"
           />
@@ -226,9 +226,7 @@ export default function AdminSettings() {
                       phone: '0000000000',
                       wilaya: 'Test Wilaya',
                       address: 'Test Address',
-                      product_id: '1ab9a218-4186-4b51-a978-6402f574d800', // A random UUID or known product
                       product_name: 'Test Product',
-                      price: 0,
                       status: 'pending'
                     }).select()
                     if (error) {

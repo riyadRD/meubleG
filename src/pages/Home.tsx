@@ -117,7 +117,7 @@ const Home = () => {
                   fetchPriority="high"
                   decoding="sync"
                   style={{ 
-                    imageRendering: 'high-quality',
+                    imageRendering: 'auto',
                     filter: 'blur(0)',
                     WebkitFilter: 'blur(0)'
                   }}
@@ -548,7 +548,7 @@ const FeaturedSlider = ({ products, openProduct, formatPrice, t, isRTL }: { prod
             drag={products.length > itemsPerPage ? "x" : false}
             dragConstraints={{ left: 0, right: 0 }}
             dragElastic={1}
-            onDragEnd={(e, { offset }) => {
+            onDragEnd={(_, { offset }) => {
               const swipe = offset.x
               if (swipe < -50) paginate(isRTL ? -1 : 1)
               else if (swipe > 50) paginate(isRTL ? 1 : -1)

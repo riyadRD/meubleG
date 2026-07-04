@@ -5,12 +5,13 @@ import { useTranslation } from 'react-i18next'
 import { PremiumButton } from '@/components/ui/PremiumButton'
 import { api } from '@/services/api'
 
-const FadeIn = ({ children, delay = 0 }: any) => (
+const FadeIn = ({ children, delay = 0, className }: { children: React.ReactNode, delay?: number, className?: string }) => (
   <motion.div
     initial={{ opacity: 0, y: 30 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true, margin: "-100px" }}
     transition={{ duration: 1, delay, ease: [0.22, 1, 0.36, 1] }}
+    className={className}
   >
     {children}
   </motion.div>

@@ -7,7 +7,7 @@ interface LoaderProps {
 }
 
 export const Loader = ({ onComplete }: LoaderProps) => {
-  const { t, i18n } = useTranslation()
+  const { i18n } = useTranslation()
   const [stage, setStage] = useState(0)
   const shouldReduceMotion = useReducedMotion()
 
