@@ -65,8 +65,8 @@ function App() {
       </AnimatePresence>
       
       <motion.div
-        initial={{ opacity: 0, filter: 'blur(12px)' }}
-        animate={{ opacity: showLoader ? 0 : 1, filter: showLoader ? 'blur(12px)' : 'none' }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: showLoader ? 0 : 1 }}
         transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
         className={showLoader ? "pointer-events-none h-[100dvh] overflow-hidden" : ""}
       >
