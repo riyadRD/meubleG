@@ -11,6 +11,7 @@ import ProductDetails from './pages/ProductDetails'
 const Home = lazy(() => import('./pages/Home'))
 const Products = lazy(() => import('./pages/Products'))
 const Showroom = lazy(() => import('./pages/Showroom'))
+const Contact = lazy(() => import('./pages/Contact'))
 
 // Admin imports
 import { AuthProvider } from './components/admin/AuthProvider'
@@ -83,7 +84,19 @@ function App() {
                 <Route path="showroom" element={
                   <Suspense fallback={<PageFallback />}><Showroom /></Suspense>
                 } />
+                <Route path="contact" element={
+                  <Suspense fallback={<PageFallback />}><Contact /></Suspense>
+                } />
+                <Route path="about" element={<Navigate to="/" replace />} />
+                <Route path="home" element={<Navigate to="/" replace />} />
               </Route>
+
+              {/* Top-level Admin Aliases */}
+              <Route path="/login" element={<Navigate to="/admin/login" replace />} />
+              <Route path="/categories" element={<Navigate to="/admin/categories" replace />} />
+              <Route path="/orders" element={<Navigate to="/admin/orders" replace />} />
+              <Route path="/messages" element={<Navigate to="/admin/messages" replace />} />
+              <Route path="/settings" element={<Navigate to="/admin/settings" replace />} />
 
               {/* Admin Routes */}
               <Route path="/admin" element={
@@ -105,6 +118,9 @@ function App() {
                 </Route>
                 <Route index element={<Navigate to="/admin/dashboard" replace />} />
               </Route>
+
+              {/* Catch-all route to prevent blank pages on unknown routes */}
+              <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
         </BrowserRouter>
       </motion.div>
