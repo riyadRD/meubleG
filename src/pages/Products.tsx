@@ -80,7 +80,7 @@ export const Products = () => {
 
   return (
     <div 
-      className="pt-32 pb-24 bg-premium-ivory min-h-screen"
+      className="pt-32 pb-24 bg-premium-ivory min-h-[100dvh]"
       dir={i18n.language === 'ar' ? 'rtl' : 'ltr'}
     >
       <div className="container mx-auto px-4 md:px-12">
@@ -262,6 +262,8 @@ export const Products = () => {
                     <img 
                       src={product.images[0]} 
                       alt={product.title}
+                      loading="lazy"
+                      decoding="async"
                       className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
                     />
                     

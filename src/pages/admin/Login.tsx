@@ -38,7 +38,7 @@ export default function AdminLogin() {
 
   return (
     <div 
-      className="min-h-screen flex items-center justify-center bg-premium-dark"
+      className="min-h-[100dvh] flex items-center justify-center bg-premium-dark"
       dir={i18n.language === 'ar' ? 'rtl' : 'ltr'}
     >
       <motion.div 

@@ -40,7 +40,7 @@ export default function AdminSetup() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-[#F7F8FA]" dir={i18n.language === 'ar' ? 'rtl' : 'ltr'}>
+    <div className="min-h-[100dvh] flex items-center justify-center bg-[#F7F8FA]" dir={i18n.language === 'ar' ? 'rtl' : 'ltr'}>
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}

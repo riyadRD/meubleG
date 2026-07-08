@@ -73,7 +73,7 @@ export default function AdminLayout() {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gray-50">
+      <div className="min-h-[100dvh] flex items-center justify-center bg-gray-50">
         <div className="w-8 h-8 border-4 border-primary border-t-transparent rounded-full animate-spin" />
       </div>
     )
@@ -93,7 +93,7 @@ export default function AdminLayout() {
   ]
 
   return (
-    <div className="min-h-screen bg-gray-50 flex" dir={isRTL ? 'rtl' : 'ltr'}>
+    <div className="min-h-[100dvh] bg-gray-50 flex" dir={isRTL ? 'rtl' : 'ltr'}>
       {/* Mobile overlay */}
       {isMobileMenuOpen && (
         <div 
@@ -191,7 +191,7 @@ export default function AdminLayout() {
 
       {/* ── Main content ────────────────────────────────────────────────────── */}
       <div className={cn(
-        'flex-1 flex flex-col min-h-screen w-full lg:w-auto',
+        'flex-1 flex flex-col min-h-[100dvh] w-full lg:w-auto',
         isRTL ? 'lg:mr-64' : 'lg:ml-64'
       )}>
         {/* Top header bar */}

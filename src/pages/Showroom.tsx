@@ -57,6 +57,8 @@ const Showroom = () => {
           <img 
             src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=2000&auto=format&fit=crop" 
             alt="Gazameuble Showroom Interior" 
+            fetchPriority="high"
+            decoding="async"
             className="w-full h-full object-cover"
           />
         </div>
@@ -293,26 +295,26 @@ const Showroom = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
             <FadeIn delay={0.1}>
               <div className="h-[300px] md:h-[600px] rounded-[1.5rem] md:rounded-[2rem] overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=1200&auto=format&fit=crop" className="w-full h-full object-cover hover:scale-105 transition-transform duration-1000" alt="Showroom view 1" />
+                <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=1200&auto=format&fit=crop" loading="lazy" decoding="async" className="w-full h-full object-cover hover:scale-105 transition-transform duration-1000" alt="Showroom view 1" />
               </div>
             </FadeIn>
             
             <div className="grid grid-rows-2 gap-4 md:gap-6 h-[400px] md:h-[600px]">
               <FadeIn delay={0.2} className="h-full">
                 <div className="rounded-[1.5rem] md:rounded-[2rem] overflow-hidden h-full">
-                  <img src="https://images.unsplash.com/photo-1540518614846-7eded433c457?q=80&w=1000&auto=format&fit=crop" className="w-full h-full object-cover hover:scale-105 transition-transform duration-1000 object-center" alt="Showroom view 2" />
+                  <img src="https://images.unsplash.com/photo-1540518614846-7eded433c457?q=80&w=1000&auto=format&fit=crop" loading="lazy" decoding="async" className="w-full h-full object-cover hover:scale-105 transition-transform duration-1000 object-center" alt="Showroom view 2" />
                 </div>
               </FadeIn>
               
               <div className="grid grid-cols-2 gap-4 md:gap-6 h-full">
                 <FadeIn delay={0.3} className="h-full">
                   <div className="rounded-[1.5rem] md:rounded-[2rem] overflow-hidden h-full">
-                    <img src="https://images.unsplash.com/photo-1533090161767-e6ffed986c88?q=80&w=600&auto=format&fit=crop" className="w-full h-full object-cover hover:scale-105 transition-transform duration-1000" alt="Showroom view 3" />
+                    <img src="https://images.unsplash.com/photo-1533090161767-e6ffed986c88?q=80&w=600&auto=format&fit=crop" loading="lazy" decoding="async" className="w-full h-full object-cover hover:scale-105 transition-transform duration-1000" alt="Showroom view 3" />
                   </div>
                 </FadeIn>
                 <FadeIn delay={0.4} className="h-full">
                   <div className="rounded-[1.5rem] md:rounded-[2rem] overflow-hidden h-full">
-                    <img src="https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?q=80&w=600&auto=format&fit=crop" className="w-full h-full object-cover hover:scale-105 transition-transform duration-1000" alt="Showroom view 4" />
+                    <img src="https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?q=80&w=600&auto=format&fit=crop" loading="lazy" decoding="async" className="w-full h-full object-cover hover:scale-105 transition-transform duration-1000" alt="Showroom view 4" />
                   </div>
                 </FadeIn>
               </div>

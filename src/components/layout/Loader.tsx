@@ -61,23 +61,19 @@ export const Loader = ({ onComplete }: LoaderProps) => {
           {/* Centered Content */}
           <div className="relative flex flex-col items-center justify-center z-10 w-full h-full pb-16">
             
-            {/* Logo Wrapper (Fades in over 0.8s after 0.2s delay) */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.75, filter: shouldReduceMotion ? 'none' : 'blur(8px)' }}
-              animate={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
+              initial={{ opacity: 0, scale: 0.75 }}
+              animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.2, duration: 0.8, ease: "easeOut" }}
               className="relative flex items-center justify-center"
             >
-              {/* layoutId Morph Element */}
               <motion.div
                 layoutId="brand-logo"
-                initial={{ boxShadow: '0 0 10px rgba(212,175,55,0.4)' }}
+                initial={{ boxShadow: '0 0 40px rgba(212,175,55,0.15)' }}
                 animate={stage >= 4 && !shouldReduceMotion ? {
-                  scale: [1, 1.03, 1],
-                  boxShadow: ['0 0 40px rgba(212,175,55,0.15)', '0 0 60px rgba(212,175,55,0.3)', '0 0 40px rgba(212,175,55,0.15)']
+                  scale: [1, 1.03, 1]
                 } : { 
-                  scale: 1, 
-                  boxShadow: '0 0 40px rgba(212,175,55,0.15)' 
+                  scale: 1
                 }}
                 transition={{ duration: 0.4, ease: "easeInOut" }}
                 className="relative w-[180px] h-[180px] rounded-full overflow-hidden flex items-center justify-center bg-white shadow-sm"
@@ -125,11 +121,10 @@ export const Loader = ({ onComplete }: LoaderProps) => {
 
             {/* Luxury Tagline Reveal (Starts at 1.2s) */}
             <motion.div
-              initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 15, filter: shouldReduceMotion ? 'none' : 'blur(4px)' }}
+              initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 15 }}
               animate={{ 
                 opacity: stage >= 2 ? 0.7 : 0,
-                y: stage >= 2 ? 0 : (shouldReduceMotion ? 0 : 15),
-                filter: stage >= 2 ? 'blur(0px)' : (shouldReduceMotion ? 'none' : 'blur(4px)')
+                y: stage >= 2 ? 0 : (shouldReduceMotion ? 0 : 15)
               }}
               transition={{ 
                 duration: 0.8, 

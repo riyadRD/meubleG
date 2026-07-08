@@ -48,7 +48,7 @@ export default function ProductDetails() {
   // Page renders IMMEDIATELY in all cases.
   // When product is null (direct URL), skeleton blocks fill the space while Supabase responds.
   return (
-    <div className="min-h-screen bg-premium-ivory pt-24 pb-20">
+    <div className="min-h-[100dvh] bg-premium-ivory pt-24 pb-20">
       <div className="container mx-auto px-6 md:px-12">
         <button
           onClick={() => navigate(-1)}
@@ -98,6 +98,7 @@ export default function ProductDetails() {
                     <img
                       src={img}
                       alt=""
+                      decoding="async"
                       className="w-full h-full object-cover"
                       loading={idx === 0 ? 'eager' : 'lazy'}
                     />

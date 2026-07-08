@@ -17,7 +17,7 @@ const Layout = () => {
   }, [location.pathname])
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-[100dvh]">
       <Navbar />
       <GlobalSearch />
       <ProductModal />

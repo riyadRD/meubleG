@@ -28,7 +28,7 @@ const AdminSettings = lazy(() => import('./pages/admin/Settings'))
 
 // Simple fallback for Suspense during navigation
 const PageFallback = () => (
-  <div className="min-h-screen flex items-center justify-center bg-accent/10">
+  <div className="min-h-[100dvh] flex items-center justify-center bg-accent/10">
     <div className="w-12 h-12 border-4 border-primary/20 border-t-primary rounded-full animate-spin" />
   </div>
 )

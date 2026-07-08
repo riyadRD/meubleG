@@ -131,6 +131,7 @@ const Home = () => {
             src={HERO_IMAGES[nextSlideIndex]}
             alt=""
             aria-hidden
+            decoding="async"
             className="absolute opacity-0 w-px h-px"
           />
 
@@ -234,7 +235,7 @@ const Home = () => {
         <div className="container mx-auto px-6 md:px-12 text-center">
           <FadeIn>
             <div className="w-20 h-20 md:w-32 md:h-32 rounded-full overflow-hidden flex items-center justify-center mx-auto mb-8 md:mb-10 shadow-lg border border-premium-soft">
-              <img src="/gazameuble-logo.png" alt="Gazameuble" className="w-full h-full object-cover" />
+              <img src="/gazameuble-logo.png" alt="Gazameuble" loading="lazy" decoding="async" className="w-full h-full object-cover" />
             </div>
             <h2 className="text-2xl sm:text-3xl md:text-5xl font-serif text-premium-charcoal max-w-4xl mx-auto leading-relaxed md:leading-relaxed font-light px-4">
               "{t('home.quote')}"
@@ -270,7 +271,7 @@ const Home = () => {
                 <FadeIn delay={idx * 0.1}>
                   <Link to={`/products?cat=${cat.cat}`} className={`block ${cat.height} w-full`}>
                     <motion.div className="w-full h-full" whileHover={{ scale: 1.05 }} transition={{ duration: 1.2, ease: "easeOut" }}>
-                      <img src={cat.img} className="w-full h-full object-cover" alt={cat.title} />
+                      <img src={cat.img} loading="lazy" decoding="async" className="w-full h-full object-cover" alt={cat.title} />
                     </motion.div>
                     <div className="absolute inset-0 bg-gradient-to-t from-premium-charcoal/80 via-premium-charcoal/20 to-transparent opacity-80" />
                     <div className="absolute bottom-8 left-8 md:bottom-12 md:left-12">
@@ -433,6 +434,7 @@ const Home = () => {
                   className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 ease-out" 
                   alt="Instagram Style" 
                   loading="lazy"
+                  decoding="async"
                 />
                 
                 {/* Overlay */}
@@ -569,6 +571,8 @@ const FeaturedSlider = ({ products, openProduct, formatPrice, t, isRTL }: { prod
                     whileHover={{ scale: 1.08 }}
                     transition={{ duration: 0.8, ease: "easeOut" }}
                     src={product.images[0]} 
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-full object-cover pointer-events-none" 
                     alt={product.title} 
                   />
